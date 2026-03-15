@@ -7,7 +7,9 @@ populations.forEach((pop) => {
   const clean = pop.textContent.replace(/,/g, '');
   const number = Number(clean);
 
-  numbers.push(number);
+  if (!isNaN(number)) {
+    numbers.push(number);
+  }
 });
 
 const total = numbers.reduce((sum, num) => sum + num, 0);
